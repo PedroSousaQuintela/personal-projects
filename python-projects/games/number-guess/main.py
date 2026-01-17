@@ -1,7 +1,5 @@
 from interface import interface_main
 
-
-
 def main():
 
     interface_main()
