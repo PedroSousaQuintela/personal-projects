@@ -36,11 +36,18 @@ def num_main() -> int:
     # Asks the user to input the minimum & maximum to continue the function
     print("\n---------------------------------------------------------------------\n")
     print("\nPlease input the following to start - \n")
-    user_min = int(input("Minimum: "))
-    user_max = int(input("Maximum: "))
+    
+    # Makes sure that any non-integer choices get caught and notifies the user and allows them to try again.
+    try:
+        user_min = int(input("Minimum: "))
+        user_max = int(input("Maximum: "))
 
-    # Stores the randomly generated number
-    stored_num = generate_number(user_min, user_max)
+        # Stores the randomly generated number
+        stored_num = generate_number(user_min, user_max)
 
-    # Returns the generated number to be used in the game
-    return stored_num
+        # Returns the generated number to be used in the game
+        return stored_num
+
+    except ValueError:
+        print("Please only input a number!\n")
+        num_main()
